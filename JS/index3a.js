@@ -25,11 +25,8 @@ function initMap() {
 function getPoint(magnitude) {
   return {
     path: google.maps.SymbolPath.POINT,
-    fillColor: "red",
-    fillOpacity: 0.2,
+    Color: "red",
     scale: Math.pow(2, magnitude) / 2,
-    strokeColor: "white",
-    strokeWeight: 0.5,
   };
 }
 
