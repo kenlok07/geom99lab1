@@ -32,6 +32,6 @@ function initMap() {
   // The marker, positioned at AC
   const marker2 = new google.maps.Marker({
     position: ac,
-    map: map,
+    map: map2,
   });
 }
