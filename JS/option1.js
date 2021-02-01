@@ -3,7 +3,7 @@
 function initMap() {
   // [START maps_add_map_instantiate_map]
   // The location of University of Waterloo
-  const uccke = { lat: 22.330807, lng: 114.22238 };
+  const uccke = { lat: 22.33080, lng: 114.22238 };
   // The map, centered at U of W
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 16,
