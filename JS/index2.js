@@ -1,7 +1,7 @@
 // [START maps_marker_clustering]
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 6,
+    zoom: 3,
     center: { lat: 51.2538, lng: -85.3232 },
   });
   // Create an array of alphabetical characters used to label the markers.
