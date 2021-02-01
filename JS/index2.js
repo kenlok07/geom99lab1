@@ -1,7 +1,7 @@
 // [START maps_marker_clustering]
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
+    zoom: 6,
     center: { lat: 51.2538, lng: -85.3232 },
   });
   // Create an array of alphabetical characters used to label the markers.
@@ -17,9 +17,8 @@ function initMap() {
     });
   });
   // Add a marker clusterer to manage the markers.
-  new MarkerClusterer(map, markers, {
-    imagePath:
-      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  var markerCluster = new MarkerClusterer(map, markers, 
+			{imagePath: "images/m",
   });
 }
 const locations = [
