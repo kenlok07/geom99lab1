@@ -26,9 +26,13 @@ function getPoint(magnitude) {
   return {
     path: google.maps.SymbolPath.POINT,
     Color: "red",
-    scale: Math.pow(2, magnitude) / 2,
+    fillOpacity: 1,
+    scale: 1 
+    strokeColor: "white",
+    strokeWeight: 0.5,
   };
 }
+
 
 function eqfeed_callback(results) {
   map.data.addGeoJson(results);
