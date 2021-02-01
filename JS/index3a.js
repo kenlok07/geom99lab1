@@ -1,10 +1,9 @@
-// [START maps_earthquake_circles]
 let map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 2,
-    center: { lat: -33.865427, lng: 151.196123 },
+    center: new google.maps.LatLng(2.8, -187.3),
     mapTypeId: "terrain",
   });
   // Create a <script> tag and set the USGS URL as the source.
@@ -14,27 +13,17 @@ function initMap() {
   script.src =
     "https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js";
   document.getElementsByTagName("head")[0].appendChild(script);
-  map.data.setStyle((feature) => {
-    const magnitude = feature.getProperty("mag");
-    return {
-      icon: getPoint(magnitude),
-    };
-  });
 }
 
-function getPoint(magnitude) {
-  return {
-    path: google.maps.SymbolPath.POINT,
-    Color: "red",
-    fillOpacity: 1,
-    scale: 1 
-    strokeColor: "white",
-    strokeWeight: 0.5,
-  };
-}
-
-
-function eqfeed_callback(results) {
-  map.data.addGeoJson(results);
-}
-// [END maps_earthquake_circles]
+// Loop through the results array and place a marker for each
+// set of coordinates.
+const eqfeed_callback = function (results) {
+  for (let i = 0; i < results.features.length; i++) {
+    const coords = results.features[i].geometry.coordinates;
+    const latLng = new google.maps.LatLng(coords[1], coords[0]);
+    new google.maps.Marker({
+      position: latLng,
+      map: map,
+    });
+  }
+};
