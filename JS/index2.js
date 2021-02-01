@@ -17,9 +17,8 @@ function initMap() {
     });
   });
   // Add a marker clusterer to manage the markers.
-  var markerCluster = new MarkerClusterer(map, markers, 
-			{imagePath: "images/m",
-  });
+ var markerCluster = new MarkerClusterer(map, markers, 
+			{imagePath: "images/m1.png","images/m2.png","images/m3.png","images/m4.png","images/m5.png"});
 }
 const locations = [
   { lat: 49.758123, lng: -92.65349 },
